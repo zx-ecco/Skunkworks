@@ -2,9 +2,6 @@
 sudo sed -i 's/# deb/deb/g' /etc/apt/sources.list
 #remover as aplicações indesejáveis.
 sudo apt-get install --yes linux-image-generic linux-headers-generic linux-firmware linux-tools-generic
-sudo apt-get --yes purge linux-image-* linux-headers-* linux-firmware 
-sudo apt-get update
-sudo apt-get install --yes linux-image-generic linux-headers-generic linux-firmware linux-tools-generic
 #app purge commands are now segmented so that if one app is not allready uninstalled the script will still remove the rest.
 sudo apt-get --yes remove leafpad
 sudo apt-get --yes purge gnome-mplayer
@@ -55,9 +52,9 @@ sudo apt-get clean && sudo echo "Sistema Actualizado"
 #instalar the good stuff - core.
 #definir como aceite o eula das fonts da ms para evitar a pausa extra na instalação
 sudo echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true |sudo debconf-set-selections
-sudo apt-get install --yes libreoffice transmission-gtk msn-pecan synaptic xul-ext-adblock-plus xul-ext-https-everywhere mc
+sudo apt-get install --yes libreoffice transmission-gtk msn-pecan synaptic mc
 #diagramas, design e paginação
-sudo apt-get install gimp
+sudo apt-get install --yes gimp gpsd 
 #sudo apt-get install --yes dia scribus inkscape gimp comix 
 sudo apt-get clean 
 #multimédia - playback
