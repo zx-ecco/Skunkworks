@@ -17,6 +17,7 @@ sudo apt-get --yes purge parole
 sudo apt-get --yes purge gmusicbrowser
 sudo apt-get --yes purge zeitgeist*
 sudo apt-get --yes autoremove 
+clear #limpar o texto do terminal para ser mais fácil ler a mensagem seguinte
 sudo echo "sistema limpo" 
 sleep 2s
 #adicionar repositórios extra
@@ -50,8 +51,10 @@ sudo apt-get --yes upgrade
 sudo apt-get clean
 sudo apt-get --yes autoremove
 sudo apt-get install --yes mousepad
-sudo apt-get clean && sudo echo "Sistema Actualizado"
-sleep 2s
+sudo apt-get clean
+clear #limpar o texto do terminal para ser mais fácil ler a mensagem seguinte
+sudo echo "Sistema Actualizado"
+sleep 2s #para o script por 2 segundos para se poder ler a mensagem anterior
 #instalar the good stuff - core.
 #definir como aceite o eula das fonts da ms para evitar a pausa extra na instalação
 sudo echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true |sudo debconf-set-selections
@@ -94,5 +97,6 @@ sudo apt-get install --yes wine winetricks playonlinux
 #limpar 
 sudo apt-get autoremove
 sudo apt-get clean
+clear 
 sudo echo "Sistema Pronto"
-sleep 2s
+sleep 2s #para o script por 2 segundos para se poder ler a mensagem anterior
