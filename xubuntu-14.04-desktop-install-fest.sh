@@ -1,4 +1,5 @@
 #receita para sistema com apps decentes/suporte crypto a partir de install Xubuntu 14.04.
+#abrir os repositórios restricted
 sudo sed -i 's/# deb/deb/g' /etc/apt/sources.list
 #remover as aplicações indesejáveis.
 sudo apt-get install --yes linux-image-generic linux-headers-generic linux-firmware linux-tools-generic
@@ -16,7 +17,9 @@ sudo apt-get --yes purge parole
 sudo apt-get --yes purge gmusicbrowser
 sudo apt-get --yes purge zeitgeist*
 sudo apt-get --yes autoremove 
-sudo echo "sistema limpo"
+clear #limpar o texto do terminal para ser mais fácil ler a mensagem seguinte
+sudo echo "sistema limpo" 
+sleep 2s
 #adicionar repositórios extra
 #adicionar o ppa do transmission
 sudo sh -c 'echo "deb http://ppa.launchpad.net/transmissionbt/ppa/ubuntu trusty main" > /etc/apt/sources.list.d/transmission-ppa-trusty.list'
@@ -48,7 +51,10 @@ sudo apt-get --yes upgrade
 sudo apt-get clean
 sudo apt-get --yes autoremove
 sudo apt-get install --yes mousepad
-sudo apt-get clean && sudo echo "Sistema Actualizado"
+sudo apt-get clean
+clear #limpar o texto do terminal para ser mais fácil ler a mensagem seguinte
+sudo echo "Sistema Actualizado"
+sleep 2s #para o script por 2 segundos para se poder ler a mensagem anterior
 #instalar the good stuff - core.
 #definir como aceite o eula das fonts da ms para evitar a pausa extra na instalação
 sudo echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true |sudo debconf-set-selections
@@ -91,4 +97,6 @@ sudo apt-get install --yes wine winetricks playonlinux
 #limpar 
 sudo apt-get autoremove
 sudo apt-get clean
+clear 
 sudo echo "Sistema Pronto"
+sleep 2s #para o script por 2 segundos para se poder ler a mensagem anterior
